@@ -9,11 +9,16 @@ class ContactsLists extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        elevation: 0,
+        backgroundColor: Colors.white,
         title: const Text('My Contacts', style: TextStyle(fontSize: 24)),
         actions: const [
-          CircleAvatar(
-            radius: 22,
-            backgroundImage: AssetImage('assets/images/DP1.jpg'),
+          Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CircleAvatar(
+              radius: 22,
+              backgroundImage: AssetImage('assets/images/DP1.jpg'),
+            ),
           )
         ],
       ),
@@ -198,9 +203,11 @@ class ContactTile extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: 60,
-              width: MediaQuery.of(context).size.width * 0.35,
+            Expanded(
+              child: SizedBox(
+                height: 60,
+                width: MediaQuery.of(context).size.width * 0.35,
+              ),
             ),
             const IconButton(
                 onPressed: null,
